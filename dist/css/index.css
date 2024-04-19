@@ -1,28 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Coiny&family=Kanit:ital,wght@0,400;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&family=Phudu:wght@800&family=Poppins&family=Roboto+Mono:ital,wght@0,200;1,500&family=Roboto:wght@100&family=Rubik+Iso&display=swap");
+* {
+  font-family: lato;
+  font-weight: 600;
+}
+
+nav .student-image-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+nav .student-image-icon img {
+  width: 100%;
+  height: 100%;
+}
+nav .nav-logo {
+  display: none;
+}
 nav .btn-outline-success:hover {
   color: white;
   background-color: #09920c;
 }
 
+.menu .bi {
+  font-size: 40px;
+  font-weight: bolder;
+  position: absolute;
+  right: 5%;
+  display: none;
+}
+
+.piechart section {
+  width: 50%;
+  height: 33vh;
+}
 .piechart .demo {
+  box-sizing: border-box;
   height: 50vh;
   border-radius: 15px;
+  background-color: #faeeff;
+}
+.piechart .title {
+  margin-left: 10px;
+  margin-top: 50px;
+}
+.piechart .chart {
+  width: 50% !important;
 }
 
 .sidebar {
   width: 20%;
   height: 100vh;
   background-color: #e5f8e5;
+  position: fixed;
+  bottom: 0px;
+  z-index: 100;
 }
-
-button {
+.sidebar button {
   background-color: #d9d9d9;
 }
-
-.buttons div {
+.sidebar .buttons div {
   margin-bottom: 25px;
   padding-left: 15px;
 }
-.buttons div:hover {
+.sidebar .buttons div:hover {
   background-color: #09920c;
   border: 1px solid #09920c;
   padding: 7px 15px;
@@ -32,24 +72,35 @@ button {
 
 .dashboard {
   width: 90%;
+  margin-left: 21%;
 }
 .dashboard .main-dashboard {
   background-color: #f8fff8;
   height: 90vh;
+  font-family: lato;
+  font-weight: 600;
 }
-.dashboard .grow {
-  box-sizing: border-box;
-  width: 100%;
-}
-.dashboard .col {
+.dashboard .main-dashboard .col {
   height: 20vh;
   margin-left: 8px;
   width: 20%;
   border-radius: 15px;
+  background-color: #92098f;
+}
+.dashboard .main-dashboard .col span {
+  color: #09920c;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 90px !important;
+}
+.dashboard .main-dashboard .col .icon {
+  font-size: 30px;
+  margin-top: 10px;
+  color: white;
 }
 
 .cont {
-  height: 120vh;
+  height: 220vh;
 }
 
 .col:nth-child(1) {
@@ -68,29 +119,67 @@ button {
   background-image: linear-gradient(90deg, #925109 20%, #e9dcce 20%);
 }
 
-@media (max-width: 768px) {
-  .buttons {
-    width: -moz-fit-content;
-    width: fit-content;
-    display: flex;
+@media (max-width: 776px) {
+  .demo2 {
+    padding: 12px;
     margin: 0px;
-    padding: 0px;
-    font-size: 13px;
+  }
+  .demo2 .reg-courses {
+    margin: 9px 6rem;
+  }
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .nav-logo {
+    display: block !important;
+    position: absolute;
+    top: 0px;
+    left: 60%;
+  }
+  .menu .bi {
+    display: block;
+  }
+  .nav-item {
+    position: absolute;
+    left: 0px !important;
   }
   .sidebar {
-    width: 100%;
-    height: 20%;
+    position: absolute;
+    height: 60%;
+    top: 10%;
+    right: 4%;
+    width: 33%;
+    display: none;
+    z-index: 5;
+    border-radius: 15px;
+    transition: all 0.5s ease-out;
+    transition-duration: 2s;
   }
   .dashboard {
     margin-top: 5px;
     width: 100%;
+    margin-left: 0px;
   }
-  .grow {
+  .dashboard .grow {
     display: block !important;
   }
-  .grow .col {
-    width: 50%;
+  .dashboard .grow .col {
+    width: 70%;
     margin: 15px auto;
+    padding-left: 35px;
+  }
+  .student-image-icon {
+    position: absolute;
+    right: 10% !important;
+  }
+  .piechart .demo table {
+    margin-top: 6rem;
+  }
+  .piechart .demo .title {
+    margin-top: 15rem;
   }
   .piechart .row {
     display: block !important;
@@ -99,4 +188,107 @@ button {
     margin: 7px auto !important;
     width: 80%;
   }
+  .main-dashboard {
+    height: 100vh !important;
+  }
+  .main-dashboard .upper-part span {
+    margin-left: 50%;
+  }
+  .list-of-graduants {
+    display: block !important;
+  }
+  .list-of-graduants .grad-div {
+    margin-bottom: 2rem;
+  }
+}
+.actual-chart {
+  border-radius: 50%;
+  transform: rotate(30deg);
+  background-image: conic-gradient(#92098f 0deg, #92098f 130deg, #09920c 130deg);
+}
+
+.gender-section {
+  margin-top: 7rem;
+}
+.gender-section .m-box {
+  background-color: #09920c;
+}
+.gender-section .f-box {
+  background-color: #92098f;
+}
+
+.box, .demo2 .programme-table .uiux-box, .demo2 .programme-table .be-box, .demo2 .programme-table .fe-box, .demo2 .programme-table .fs-box, .gender-section .m-box, .gender-section .f-box {
+  width: 0.6rem;
+  height: 0.6rem;
+  max-width: 0.6rem;
+  max-height: 0.9rem;
+  min-width: 0.5rem;
+  min-height: 0.7rem;
+  border-radius: 2px;
+}
+
+.total-num {
+  color: #09920c;
+}
+
+.demo2 {
+  background-color: #e5f2ff;
+  border-radius: 15px;
+}
+.demo2 .programme-table .fs-box {
+  background-color: #09920c;
+}
+.demo2 .programme-table .fe-box {
+  background-color: #094a92;
+}
+.demo2 .programme-table .be-box {
+  background-color: #925109;
+}
+.demo2 .programme-table .uiux-box {
+  background-color: #92098f;
+}
+.demo2 .programme-table tr {
+  padding: auto;
+}
+.demo2 .chart {
+  transform: rotate(-20deg);
+  height: 16rem;
+  background-image: conic-gradient(#094a92 0deg, #094a92 72deg, #925109 72deg, #925109 151deg, #92098f 151deg, #92098f 230deg, #09920c 230deg);
+}
+
+.little-words {
+  font-size: 12px;
+}
+
+.list-of-graduants {
+  width: 100%;
+  margin-top: 3rem;
+  font-size: 20px;
+}
+.list-of-graduants input {
+  height: 2rem;
+  font-size: 15px;
+}
+.list-of-graduants .grad-div {
+  width: 35rem !important;
+  background-color: #f8fff8;
+}
+.list-of-graduants .grad-div .grad-txt {
+  width: 50%;
+}
+.list-of-graduants .btn1 {
+  background-color: #e5f8e5;
+}
+
+.student-list {
+  padding-top: 5rem;
+}
+.student-list table {
+  width: 100%;
+}
+.student-list tr {
+  border-bottom: 2px solid black;
+}
+.student-list td {
+  padding: 10px;
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,37 @@
+// Colour Variables
+$sidebar-background-color: #e5f8e5;
+$admin-green: #09920c;
+$admin-dashboard-background: #f8fff8;
+$logo-color: #d9d9d9;
+//the total student part
+$stu-side-color: #92098f;
+$icon-color: #ffffff;
+$main-dashboard: #faeeff;
+//The total amount part
+$total-amount-sidebar: #09920c;
+$total-amount-bgcolor: #e5f8e5;
+
+// the total project part
+$total-project-sidebar: #094a92;
+$total-project-bgcolor: #e5f2ff;
+
+// total certificate
+$toal-certificate-sidebar: #925109;
+$total-certificate-bgcolor: #e9dcce;
+
+// demography background
+$demography-color-100: #faeeff;
+$demography-color-200: #92098f;
+$demography-color-300: #09920c;
+
+// registered courses
+$registered-courses-bgcolor: #e5f2ff;
+
+@mixin font {
+  font-family: lato;
+  font-weight: 600;
+}
+
+@mixin gradient-color($color1, $color2) {
+  background-image: linear-gradient(90deg, $color1 20%, $color2 20%);
+}

@@ -1,42 +1,24 @@
-// Colour Variables
-$sidebar-background-color: #e5f8e5;
-$admin-green: #09920c;
-$admin-dashboard-background: #f8fff8;
-$logo-color: #d9d9d9;
-//the total student part
-$stu-side-color: #92098f;
-$icon-color: #ffffff;
-$main-dashboard: #faeeff;
-//The total amount part
-$total-amount-sidebar: #09920c;
-$total-amount-bgcolor: #e5f8e5;
+@import "./variables";
+// font family Lato
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Coiny&family=Kanit:ital,wght@0,400;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&family=Phudu:wght@800&family=Poppins&family=Roboto+Mono:ital,wght@0,200;1,500&family=Roboto:wght@100&family=Rubik+Iso&display=swap");
 
-// the total project part
-$total-project-sidebar: #094a92;
-$total-project-bgcolor: #e5f2ff;
-
-// total certificate
-$toal-certificate-sidebar: #925109;
-$total-certificate-bgcolor: #e9dcce;
-
-// demography background
-$demography-color-100: #faeeff;
-$demography-color-200: #92098f;
-$demography-color-300: #09920c;
-
-// registered courses
-$registered-courses-bgcolor: #e5f2ff;
-
-@mixin font {
-  font-family: lato;
-  font-weight: 600;
+* {
+  @include font;
 }
-
-@mixin gradient-color($color1, $color2) {
-  background-image: linear-gradient(90deg, $color1 20%, $color2 20%);
-}
-
 nav {
+  .student-image-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .nav-logo{
+    display: none;
+  }
   .btn-outline-success {
     &:hover {
       color: white;
@@ -45,58 +27,95 @@ nav {
   }
 }
 
+.menu .bi {
+  font-size: 40px;
+  font-weight: bolder;
+  position: absolute;
+  right: 5%;
+  display: none;
+}
+
+//the pie chart section
 .piechart {
+  section {
+    width: 50%;
+    height: 33vh;
+  }
   .demo {
+    box-sizing: border-box;
     height: 50vh;
     border-radius: 15px;
+    background-color: $demography-color-100;
+  }
+  .title {
+    margin-left: 10px;
+    margin-top: 50px;
+  }
+
+  .chart {
+    width: 50% !important;
   }
 }
 
+// The side bar that is set to position fixed
 .sidebar {
   width: 20%;
   height: 100vh;
   background-color: $sidebar-background-color;
-}
-button {
-  background-color: $logo-color;
-}
-.buttons {
-  div {
-    margin-bottom: 25px;
-    padding-left: 15px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 100;
+  button {
+    background-color: $logo-color;
+  }
+  .buttons {
+    div {
+      margin-bottom: 25px;
+      padding-left: 15px;
 
-    &:hover {
-      background-color: $admin-green;
-      border: 1px solid $admin-green;
-      padding: 7px 15px;
-      border-width: 100%;
-      color: #ffffff;
+      &:hover {
+        background-color: $admin-green;
+        border: 1px solid $admin-green;
+        padding: 7px 15px;
+        border-width: 100%;
+        color: #ffffff;
+      }
     }
   }
 }
 
+// This is the dashboard
 .dashboard {
   width: 90%;
+  margin-left: 21%;
+
   .main-dashboard {
     background-color: $admin-dashboard-background;
     height: 90vh;
-  }
+    @include font;
+    .col {
+      height: 20vh;
+      margin-left: 8px;
+      width: 20%;
+      border-radius: 15px;
+      background-color: #92098f;
 
-  .grow {
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .col {
-    height: 20vh;
-    margin-left: 8px;
-    width: 20%;
-    border: {
-      radius: 15px;
+      span {
+        color: $demography-color-300;
+        font-weight: bolder;
+        font-size: 20px;
+        margin-top: 90px !important;
+      }
+      .icon {
+        font-size: 30px;
+        margin-top: 10px;
+        color: white;
+      }
     }
   }
 }
 .cont {
-  height: 120vh;
+  height: 220vh;
 }
 
 //Total student Part
@@ -121,30 +140,87 @@ button {
     $total-certificate-bgcolor
   );
 }
-@media (max-width: 768px) {
-  .buttons {
-    width: fit-content;
-    display: flex;
+
+//mobile responsive part
+@media (max-width: 776px) {
+  .demo2 {
+    padding: 12px;
     margin: 0px;
-    padding: 0px;
-    font-size: 13px;
+
+    .reg-courses {
+      margin: 9px 6rem;
+    }
   }
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+     display: none;
+  }
+  .nav-logo{
+    display: block!important;
+    position: absolute;
+    top: 0px;
+    left: 60%;
+    
+  }
+
+  //   The menu bar that hides the sidebar
+  .menu .bi {
+    display: block;
+  }
+
+  //   The nav align-items
+  .nav-item {
+    position: absolute;
+    left: 0px !important;
+  }
+  //The side bar displays off when in mobile mode
   .sidebar {
-    width: 100%;
-    height: 20%;
+    // margin-top: 20%;
+    position: absolute;
+    height: 60%;
+    top: 10%;
+    right: 4%;
+    width: 33%;
+    display: none;
+    z-index: 5;
+    border-radius: 15px;
+    transition: all 0.5s ease-out;
+    transition-duration: 2s;
   }
   .dashboard {
     margin-top: 5px;
     width: 100%;
-  }
-  .grow {
-    display: block !important;
-    .col {
-      width: 50%;
-      margin: 15px auto;
+    margin-left: 0px;
+
+    .grow {
+      display: block !important;
+      .col {
+        width: 70%;
+        margin: 15px auto;
+        padding-left: 35px;
+      }
     }
   }
+
+  .student-image-icon{
+    position: absolute;
+    right: 10%!important;
+  }
+
+  
+  //The Pie chart for mobile responsiveness
   .piechart {
+    .demo {
+      table {
+        margin-top: 6rem;
+      }
+
+      .title {
+        margin-top: 15rem;
+      }
+    }
     .row {
       display: block !important;
       div {
@@ -152,5 +228,146 @@ button {
         width: 80%;
       }
     }
+  }
+
+  //main dashboard
+  .main-dashboard {
+    height: 100vh !important;
+    .upper-part {
+      span {
+        margin-left: 50%;
+      }
+    }
+  }
+
+  //list of graduants div
+  .list-of-graduants {
+    display: block !important;
+    .grad-div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+//End of Mobile responsiveness
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+//contd of styling: demography of students
+.actual-chart {
+  border-radius: 50%;
+  transform: rotate(30deg);
+  background-image: conic-gradient(
+    $stu-side-color 0deg,
+    $stu-side-color 130deg,
+    $demography-color-300 130deg
+  );
+}
+.gender-section {
+  margin-top: 7rem;
+  .m-box {
+    @extend .box;
+    background-color: $demography-color-300;
+  }
+  .f-box {
+    @extend .box;
+    background-color: $stu-side-color;
+  }
+}
+
+.box {
+  width: 0.6rem;
+  height: 0.6rem;
+  max-width: 0.6rem;
+  max-height: 0.9rem;
+  min-width: 0.5rem;
+  min-height: 0.7rem;
+  border-radius: 2px;
+}
+.total-num {
+  color: $demography-color-300;
+}
+// registered courses
+.demo2 {
+  background-color: $total-project-bgcolor;
+  border-radius: 15px;
+
+  .programme-table {
+    .fs-box {
+      @extend .box;
+      background-color: $total-amount-sidebar;
+    }
+
+    .fe-box {
+      @extend .box;
+      background-color: $total-project-sidebar;
+    }
+
+    .be-box {
+      @extend .box;
+      background-color: $toal-certificate-sidebar;
+    }
+
+    .uiux-box {
+      @extend .box;
+      background-color: $stu-side-color;
+    }
+
+    tr {
+      padding: auto;
+    }
+  }
+  .chart {
+    transform: rotate(-20deg);
+    height: 16rem;
+    background-image: conic-gradient(
+      $total-project-sidebar 0deg,
+      $total-project-sidebar 72deg,
+      $toal-certificate-sidebar 72deg,
+      $toal-certificate-sidebar 151deg,
+      $stu-side-color 151deg,
+      $stu-side-color 230deg,
+      $total-amount-sidebar 230deg
+    );
+  }
+}
+.little-words {
+  font-size: 12px;
+}
+
+//List of graduants
+.list-of-graduants {
+  width: 100%;
+  margin-top: 3rem;
+  // display: grid;
+  // grid-template-columns: auto auto;
+  font-size: 20px;
+  input {
+    height: 2rem;
+    font-size: 15px;
+  }
+  .grad-div {
+    width: 35rem !important;
+    background-color: $admin-dashboard-background;
+    .grad-txt {
+      width: 50%;
+    }
+  }
+  .btn1 {
+    background-color: $sidebar-background-color;
+  }
+}
+
+//student List start here
+.student-list {
+  padding-top: 5rem;
+
+  table {
+    width: 100%;
+  }
+  tr {
+    border-bottom: 2px solid black;
+  }
+  td {
+    padding: 10px;
   }
 }
