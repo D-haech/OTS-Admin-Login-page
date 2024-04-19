@@ -6,9 +6,10 @@ const mainDashboard = window.document.querySelector(".main-dashboard");
 const sideDashboard = document.querySelector('.dashboard');
 let switchOn = true;
 
-//Logic starts here
+// //Logic starts here
 
-//displays the sidebar
+
+// // displays the sidebar
 // menuButton.onClick = () => {
 //   if (switchOn == true) {
 //     sidebar.style.display = "block";
@@ -23,6 +24,8 @@ let switchOn = true;
 
 
 
+try{
+
 const button = document.querySelector('.jswe');
 const inputValue  = document.querySelector('.test');
 function workClick(){
@@ -31,7 +34,10 @@ function workClick(){
 
 button.addEventListener("click", workClick());
 
-
+}
+catch(e){
+    alert(e.message);
+}
 
 // //change the pages
 // sideDashboard.onClicick = () => {
