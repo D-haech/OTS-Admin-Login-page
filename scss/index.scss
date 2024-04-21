@@ -391,8 +391,8 @@ nav {
 //List of graduants
 
 .list-of-graduants {
-  width: 100%;
-  background-color: $admin-dashboard-background;
+  width: 90%;
+  //background-color: $admin-dashboard-background;
   //margin-top: 3rem;
   height: 4rem;
   // display: grid;
@@ -404,11 +404,11 @@ nav {
   }
 
   .grad-div {
-    width: 35rem;
+    width: 25rem;
     //background-color: $admin-dashboard-background;
     .grad-txt {
       @include search-bar;
-      background-position: 247px 5px;
+      background-position: calc(13rem - 5px) 5px;
     }
   }
   .btn1 {
@@ -491,7 +491,7 @@ nav {
   }
   .payment-grad-txt {
     @include search-bar;
-    background-position: 16rem 9px;
+    background-position: 20rem 5px;
   }
   .table-div {
     border-radius: 10px;

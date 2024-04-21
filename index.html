@@ -35,9 +35,9 @@
       <nav class="nav position-relative ">
         <ul class="nav-item position-absolute end-50">
           <li class="nav-link">
-            <button class="btn btn-outline-success rounded-3 admin-login">
+            <!-- <button class="btn btn-outline-success rounded-3 admin-login">
               Admin Login
-            </button>
+            </button> -->
             <button class="nav-logo">LOGO</button>
           </li>
         </ul>
@@ -49,7 +49,7 @@
       </nav>
 
       <!-- the login Form for the admin -->
-      <dialog class="login position-absolute top-50 start-50 container">
+      <!-- <dialog class="login position-absolute top-50 start-50 container">
         <div class="container bg-light text-center">
           <h3>Admin Login</h3>
           <form action="#" method="post" class="form-control">
@@ -62,7 +62,7 @@
             <input type="submit" class="form-control-lg px-5" value="Login">
         </div>
         </form>
-      </dialog>
+      </dialog> -->
       <span class="menu"><i class="bi bi-list"></i></span>
       <!-- The nav bar end here -->
 
@@ -202,13 +202,13 @@
 
         <!-- list of graduants -->
         <div class="list-of-graduants mt-5   ">
-          <div class="row justify-content-around">
-            <div class="grad-div ">
+          <div class="row  gap-1 justify-content-around">
+            <div class="grad-div  ">
               <label for="graduands" class="col-form-label">List of Graduands</label> &nbsp;
               <input type="text" name="graduands" class="col-form-control graduands ms-3 mt-2 rounded-3" id="graduands">
             </div>
-            <div class="   grad-div   text-end ">
-              <input type="text" placeholder="Search any name..." class="col-form-control rounded-3 grad-txt">
+            <div class="grad-div  text-end ">
+              <input type="text" placeholder="Search any name..." class="col-form-control rounded-3 grad-txt me-3">
               <input type="button" value="Filter" class=" btn btn1 ">
             </div>
           </div>
@@ -331,7 +331,7 @@
 
         <!-- list of Students -->
         <div class="list-of-students mt-5  ps-1 ">
-          <div class="row justify-content-between">
+          <div class="row justify-content-around">
             <div class="col-md-6   grad-div">
               <label for="graduands" class="col-form-label">List of Students</label> &nbsp;
               <input type="text" name="graduands" class="col-form-control graduands  rounded-3" value="2000"
@@ -342,8 +342,6 @@
               <input type="button" value="Filter" class=" btn btn1 ms-5  align-item-end">
             </div>
           </div>
-
-
         </div>
         <!-- student Table begins here -->
         <div class="table-div  mx-4 ">
@@ -463,13 +461,29 @@
             </tr>
           </table>
         </div>
+
+        <!-- The next tab section for payment page -->
+        <div class="row mx-5 mt-4 justify-content-between page-section ">
+          <section class="col-4 ">
+            <div class="row ">
+              <div class="col border-2  border-dark border-end next-div">
+                <a href="#">First</a>
+              </div>
+              <div class="col border-2 border-dark border-end next-div">Prev</div>
+              <div class="col border-2 border-dark border-end next-div">Next</div>
+              <div class="col border-2 border-dark border-end next-div">Last</div>
+            </div>
+          </section>
+          <section class="col-4 ">1-10</section>
+          <section class="col-4">page</section>
+        </div>
       </div>
       <div class="solo-projects mt-5"></div>
       <div class="announcements"></div>
       <div class="settings"></div>
     </div>
 
-    <script type="module" src="/Javascript//index.js"></script>
+    <script src="./Javascript/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>

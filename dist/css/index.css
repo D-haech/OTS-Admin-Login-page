@@ -306,8 +306,7 @@ nav .btn-outline-success:hover {
 }
 
 .list-of-graduants {
-  width: 100%;
-  background-color: #f8fff8;
+  width: 90%;
   height: 4rem;
   font-size: 20px;
 }
@@ -316,13 +315,13 @@ nav .btn-outline-success:hover {
   font-size: 15px;
 }
 .list-of-graduants .grad-div {
-  width: 35rem;
+  width: 25rem;
 }
 .list-of-graduants .grad-div .grad-txt {
-  width: 50%;
+  width: 60%;
   background-image: url("/image/search.svg");
   background-repeat: no-repeat;
-  background-position: 247px 5px;
+  background-position: calc(13rem - 5px) 5px;
 }
 .list-of-graduants .btn1 {
   background-color: #ddeed6;
@@ -389,10 +388,10 @@ nav .btn-outline-success:hover {
   background-color: #ddeed6;
 }
 .payments .payment-grad-txt {
-  width: 50%;
+  width: 60%;
   background-image: url("/image/search.svg");
   background-repeat: no-repeat;
-  background-position: 16rem 9px;
+  background-position: 20rem 5px;
 }
 .payments .table-div {
   border-radius: 10px;

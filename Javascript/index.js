@@ -20,9 +20,9 @@ menuButton.addEventListener("click", () => {
 });
 
 //Display the Admin login in form
-login.addEventListener("click", () => {
-  dialog.show();
-});
+// login.addEventListener("click", () => {
+//   dialog.show();
+// });
 
 // //change the pages
 //click the Dashboard
