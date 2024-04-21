@@ -5,6 +5,44 @@
 * {
   @include font;
 }
+
+// Empty classes for Javascript implementations
+.side-highlight {
+  background-color: $admin-green;
+  border: 1px solid $admin-green;
+  padding: 7px 15px;
+  border-width: 100%;
+  color: #ffffff;
+}
+
+.sidebar-display {
+  display: block !important;
+}
+//||||||||||||||||||||||||||||||||||||||||||||
+
+//Admin Login form
+.login {
+  position: absolute;
+  z-index: 101;
+  left: 0%;
+  width: 50%;
+  border-radius: 15px;
+  border-width: 0px;
+  height: 20rem;
+  div {
+    font-size: 10px !important;
+    height: 100%;
+    // border: 1px solid black;
+    input {
+      width: 40%;
+    }
+    input[type="submit"] {
+      width: 60%;
+      background-color: $admin-green;
+      border-radius: 10px;
+    }
+  }
+}
 nav {
   .student-image-icon {
     width: 50px;
@@ -16,7 +54,7 @@ nav {
     }
   }
 
-  .nav-logo{
+  .nav-logo {
     display: none;
   }
   .btn-outline-success {
@@ -91,9 +129,9 @@ nav {
 
   .main-dashboard {
     background-color: $admin-dashboard-background;
-    height: 90vh;
+    height: 170vh;
     @include font;
-    .col {
+    .card-col {
       height: 20vh;
       margin-left: 8px;
       width: 20%;
@@ -115,26 +153,26 @@ nav {
   }
 }
 .cont {
-  height: 220vh;
+  height: fit-content;
 }
 
 //Total student Part
-.col:nth-child(1) {
+.card-col:nth-child(1) {
   @include gradient-color($stu-side-color, $main-dashboard);
 }
 
 // Total amount part
-.col:nth-child(2) {
+.card-col:nth-child(2) {
   @include gradient-color($total-amount-sidebar, $total-amount-bgcolor);
 }
 
 //total project part
-.col:nth-child(3) {
+.card-col:nth-child(3) {
   @include gradient-color($total-project-sidebar, $total-project-bgcolor);
 }
 
 //total certificate
-.col:nth-child(4) {
+.card-col:nth-child(4) {
   @include gradient-color(
     $toal-certificate-sidebar,
     $total-certificate-bgcolor
@@ -155,14 +193,13 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-     display: none;
+    display: none;
   }
-  .nav-logo{
-    display: block!important;
+  .nav-logo {
+    display: block !important;
     position: absolute;
     top: 0px;
     left: 60%;
-    
   }
 
   //   The menu bar that hides the sidebar
@@ -204,12 +241,11 @@ nav {
     }
   }
 
-  .student-image-icon{
+  .student-image-icon {
     position: absolute;
-    right: 10%!important;
+    right: 10% !important;
   }
 
-  
   //The Pie chart for mobile responsiveness
   .piechart {
     .demo {
@@ -232,7 +268,7 @@ nav {
 
   //main dashboard
   .main-dashboard {
-    height: 100vh !important;
+    height: 340vh !important;
     .upper-part {
       span {
         margin-left: 50%;
@@ -240,11 +276,29 @@ nav {
     }
   }
 
-  //list of graduants div
+  //list of graduants mobile responsiveness
   .list-of-graduants {
+    margin-bottom: 5rem;
     display: block !important;
     .grad-div {
       margin-bottom: 2rem;
+      .grad-txt {
+        background-position: calc(15rem - 5px) 5px !important;
+      }
+    }
+  }
+
+  //Next Page section for mobile responsiveness
+  .page-section {
+    margin-top: 11rem;
+  }
+
+  //Payments Page mobile responsiveness
+  .payments {
+    .list-of-students {
+      .grad-div:nth-child(2) {
+        text-align: left !important;
+      }
     }
   }
 }
@@ -335,9 +389,12 @@ nav {
 }
 
 //List of graduants
+
 .list-of-graduants {
   width: 100%;
-  margin-top: 3rem;
+  background-color: $admin-dashboard-background;
+  //margin-top: 3rem;
+  height: 4rem;
   // display: grid;
   // grid-template-columns: auto auto;
   font-size: 20px;
@@ -345,29 +402,131 @@ nav {
     height: 2rem;
     font-size: 15px;
   }
+
   .grad-div {
-    width: 35rem !important;
-    background-color: $admin-dashboard-background;
+    width: 35rem;
+    //background-color: $admin-dashboard-background;
     .grad-txt {
-      width: 50%;
+      @include search-bar;
+      background-position: 247px 5px;
     }
   }
   .btn1 {
-    background-color: $sidebar-background-color;
+    background-color: $filter-button-color;
   }
 }
 
 //student List start here
 .student-list {
   padding-top: 5rem;
+  border-radius: 15px;
+  height: 24rem;
+  background-color: white;
 
   table {
     width: 100%;
+    background-color: white;
   }
   tr {
     border-bottom: 2px solid black;
   }
   td {
     padding: 10px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+//the payment section
+%card-width {
+  width: 40%;
+  height: 13rem;
+}
+%font-weight {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+%click-color {
+  background-color: $admin-green;
+  border: 1px solid $admin-green;
+  padding: 7px 15px;
+  border-width: 100%;
+  color: #ffffff;
+}
+.payments {
+  display: none;
+  height: 50rem;
+  background-color: $admin-dashboard-background;
+  .payment-col-1 {
+    border-radius: 15px;
+    @extend %card-width, %font-weight;
+    @include gradient-color($stu-side-color, $main-dashboard);
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      color: $stu-side-color;
+    }
+  }
+  .payment-col-2 {
+    border-radius: 15px;
+    @extend %card-width, %font-weight;
+    @include gradient-color($total-project-sidebar, $total-project-bgcolor);
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      color: $total-project-sidebar;
+    }
+  }
+  .icon {
+    font-size: 30px;
+    margin-top: 10px;
+    color: white;
+  }
+
+  .list-of-students {
+    .btn1 {
+      background-color: $filter-button-color;
+    }
+  }
+  .payment-grad-txt {
+    @include search-bar;
+    background-position: 16rem 9px;
+  }
+  .table-div {
+    border-radius: 10px;
+    background-color: white;
+    padding: 3px;
+    margin-top: 2rem;
+    .student-table {
+      width: 100%;
+
+      td {
+        font: {
+          size: 12px;
+          weight: lighter;
+        }
+      }
+    }
+  }
+
+  .pop-up {
+    border-radius: 13px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: $icon-color;
+    width: fit-content;
+    display: none;
+    text-decoration: none !important;
+  }
+}
+
+//Next page section
+.page-section {
+  section {
+    width: fit-content;
+  }
+  .next-div {
+    width: fit-content;
   }
 }

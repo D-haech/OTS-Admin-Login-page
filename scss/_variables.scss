@@ -27,6 +27,9 @@ $demography-color-300: #09920c;
 // registered courses
 $registered-courses-bgcolor: #e5f2ff;
 
+//filter button
+$filter-button-color: #ddeed6;
+
 @mixin font {
   font-family: lato;
   font-weight: 600;
@@ -34,4 +37,12 @@ $registered-courses-bgcolor: #e5f2ff;
 
 @mixin gradient-color($color1, $color2) {
   background-image: linear-gradient(90deg, $color1 20%, $color2 20%);
+}
+
+@mixin search-bar {
+  width: 50%;
+  background: {
+    image: url("/image/search.svg");
+    repeat: no-repeat;
+  }
 }

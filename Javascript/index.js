@@ -1,46 +1,52 @@
 //Declaring needed variables
 const menuButton = document.querySelector(".menu");
 const sidebar = document.querySelector(".sidebar");
-const login = document.querySelector('.login');
+const login = document.querySelector(".admin-login");
+const dialog = document.querySelector(".login");
 const mainDashboard = window.document.querySelector(".main-dashboard");
-const sideDashboard = document.querySelector('.dashboard');
-let switchOn = true;
+const paymentPage = document.querySelector(".payments");
+const threeDots = document.querySelectorAll(".bi-three-dots-vertical");
+const popUp = document.querySelector(".pop-up");
+
+// variables for sidebar panel
+const dashboard = document.querySelector("#dashboard");
+const paymentSidebar = document.querySelector("#payment");
 
 // //Logic starts here
 
+// displays the sidebar
+menuButton.addEventListener("click", () => {
+  sidebar.classList.toggle("sidebar-display");
+});
 
-// // displays the sidebar
-// menuButton.onClick = () => {
-//   if (switchOn == true) {
-//     sidebar.style.display = "block";
-//     switchOn = false;
-//   } else {
-//     sidebar.style.display = "none";
-//     switchOn = true;
-//   }
-
-// };
-
-
-
-
-try{
-
-const button = document.querySelector('.jswe');
-const inputValue  = document.querySelector('.test');
-function workClick(){
-    console.log("its back");
-}
-
-button.addEventListener("click", workClick());
-
-}
-catch(e){
-    alert(e.message);
-}
+//Display the Admin login in form
+login.addEventListener("click", () => {
+  dialog.show();
+});
 
 // //change the pages
-// sideDashboard.onClicick = () => {
-// sideDashboard.style.border = "2px solid red";
-// }
+//click the Dashboard
+dashboard.addEventListener("click", () => {
+  paymentSidebar.classList.remove("side-highlight");
+  dashboard.classList.add("side-highlight");
+  mainDashboard.style.display = "block";
+  paymentPage.style.display = "none";
+});
+// Click the payment section
+
+paymentSidebar.addEventListener("click", () => {
+  dashboard.classList.remove("side-highlight");
+  paymentSidebar.classList.add("side-highlight");
+  mainDashboard.style.display = "none";
+  paymentPage.style.display = "block";
+});
+
+// three dots been clicked
+/*
+threeDots.forEach((e) => {
+  e.addEventListener("click", () => {
+    popUp.style.display = "block";
+  });
+});*/
+
 

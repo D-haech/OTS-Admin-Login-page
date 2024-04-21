@@ -4,6 +4,40 @@
   font-weight: 600;
 }
 
+.side-highlight {
+  background-color: #09920c;
+  border: 1px solid #09920c;
+  padding: 7px 15px;
+  border-width: 100%;
+  color: #ffffff;
+}
+
+.sidebar-display {
+  display: block !important;
+}
+
+.login {
+  position: absolute;
+  z-index: 101;
+  left: 0%;
+  width: 50%;
+  border-radius: 15px;
+  border-width: 0px;
+  height: 20rem;
+}
+.login div {
+  font-size: 10px !important;
+  height: 100%;
+}
+.login div input {
+  width: 40%;
+}
+.login div input[type=submit] {
+  width: 60%;
+  background-color: #09920c;
+  border-radius: 10px;
+}
+
 nav .student-image-icon {
   width: 50px;
   height: 50px;
@@ -76,46 +110,47 @@ nav .btn-outline-success:hover {
 }
 .dashboard .main-dashboard {
   background-color: #f8fff8;
-  height: 90vh;
+  height: 170vh;
   font-family: lato;
   font-weight: 600;
 }
-.dashboard .main-dashboard .col {
+.dashboard .main-dashboard .card-col {
   height: 20vh;
   margin-left: 8px;
   width: 20%;
   border-radius: 15px;
   background-color: #92098f;
 }
-.dashboard .main-dashboard .col span {
+.dashboard .main-dashboard .card-col span {
   color: #09920c;
   font-weight: bolder;
   font-size: 20px;
   margin-top: 90px !important;
 }
-.dashboard .main-dashboard .col .icon {
+.dashboard .main-dashboard .card-col .icon {
   font-size: 30px;
   margin-top: 10px;
   color: white;
 }
 
 .cont {
-  height: 220vh;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.col:nth-child(1) {
+.card-col:nth-child(1) {
   background-image: linear-gradient(90deg, #92098f 20%, #faeeff 20%);
 }
 
-.col:nth-child(2) {
+.card-col:nth-child(2) {
   background-image: linear-gradient(90deg, #09920c 20%, #e5f8e5 20%);
 }
 
-.col:nth-child(3) {
+.card-col:nth-child(3) {
   background-image: linear-gradient(90deg, #094a92 20%, #e5f2ff 20%);
 }
 
-.col:nth-child(4) {
+.card-col:nth-child(4) {
   background-image: linear-gradient(90deg, #925109 20%, #e9dcce 20%);
 }
 
@@ -189,16 +224,26 @@ nav .btn-outline-success:hover {
     width: 80%;
   }
   .main-dashboard {
-    height: 100vh !important;
+    height: 340vh !important;
   }
   .main-dashboard .upper-part span {
     margin-left: 50%;
   }
   .list-of-graduants {
+    margin-bottom: 5rem;
     display: block !important;
   }
   .list-of-graduants .grad-div {
     margin-bottom: 2rem;
+  }
+  .list-of-graduants .grad-div .grad-txt {
+    background-position: calc(15rem - 5px) 5px !important;
+  }
+  .page-section {
+    margin-top: 11rem;
+  }
+  .payments .list-of-students .grad-div:nth-child(2) {
+    text-align: left !important;
   }
 }
 .actual-chart {
@@ -262,7 +307,8 @@ nav .btn-outline-success:hover {
 
 .list-of-graduants {
   width: 100%;
-  margin-top: 3rem;
+  background-color: #f8fff8;
+  height: 4rem;
   font-size: 20px;
 }
 .list-of-graduants input {
@@ -270,25 +316,113 @@ nav .btn-outline-success:hover {
   font-size: 15px;
 }
 .list-of-graduants .grad-div {
-  width: 35rem !important;
-  background-color: #f8fff8;
+  width: 35rem;
 }
 .list-of-graduants .grad-div .grad-txt {
   width: 50%;
+  background-image: url("/image/search.svg");
+  background-repeat: no-repeat;
+  background-position: 247px 5px;
 }
 .list-of-graduants .btn1 {
-  background-color: #e5f8e5;
+  background-color: #ddeed6;
 }
 
 .student-list {
   padding-top: 5rem;
+  border-radius: 15px;
+  height: 24rem;
+  background-color: white;
 }
 .student-list table {
   width: 100%;
+  background-color: white;
 }
 .student-list tr {
   border-bottom: 2px solid black;
 }
 .student-list td {
   padding: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.payments .payment-col-2, .payments .payment-col-1 {
+  width: 40%;
+  height: 13rem;
+}
+
+.payments .payment-col-2, .payments .payment-col-1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.payments {
+  display: none;
+  height: 50rem;
+  background-color: #f8fff8;
+}
+.payments .payment-col-1 {
+  border-radius: 15px;
+  background-image: linear-gradient(90deg, #92098f 20%, #faeeff 20%);
+}
+.payments .payment-col-1 span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #92098f;
+}
+.payments .payment-col-2 {
+  border-radius: 15px;
+  background-image: linear-gradient(90deg, #094a92 20%, #e5f2ff 20%);
+}
+.payments .payment-col-2 span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #094a92;
+}
+.payments .icon {
+  font-size: 30px;
+  margin-top: 10px;
+  color: white;
+}
+.payments .list-of-students .btn1 {
+  background-color: #ddeed6;
+}
+.payments .payment-grad-txt {
+  width: 50%;
+  background-image: url("/image/search.svg");
+  background-repeat: no-repeat;
+  background-position: 16rem 9px;
+}
+.payments .table-div {
+  border-radius: 10px;
+  background-color: white;
+  padding: 3px;
+  margin-top: 2rem;
+}
+.payments .table-div .student-table {
+  width: 100%;
+}
+.payments .table-div .student-table td {
+  font-size: 12px;
+  font-weight: lighter;
+}
+.payments .pop-up {
+  border-radius: 13px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: none;
+  text-decoration: none !important;
+}
+
+.page-section section {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.page-section .next-div {
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=index.css.map */
