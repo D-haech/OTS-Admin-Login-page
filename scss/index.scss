@@ -306,6 +306,72 @@ nav {
 //End of Mobile responsiveness
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+//Mobile responsiveness for tablet 958px
+@media (min-width: 777px) and (max-width: 958px) {
+  .page-section {
+    margin-top: 11rem;
+    margin-bottom: 25px;
+  }
+  .student-list {
+    margin-top: 3rem !important;
+    //background-color: blue!important;
+    height: 35rem !important;
+  }
+  .main-dashboard {
+    height: 240vh !important;
+  }
+  .grow {
+    display: block;
+    //background-color:yellow;
+    position: relative;
+    height: 20rem;
+    .col:nth-child(1)
+     {
+      float: left;
+      width: 15rem;
+      margin-bottom: 20px;
+      margin-right: 2rem;
+    }
+
+    .col:nth-child(2){
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 15rem;
+      margin-bottom: 20px;
+    }
+
+    .col:nth-child(3) {
+      //float: left;
+      width: 15rem;
+     position: absolute;
+     bottom: 0px;
+     right: 9px;
+    }
+
+    .col:nth-child(4) {
+      width: 15rem;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+
+  .piechart{
+    .actual-chart{
+      height:7rem ;
+    }
+    .chart{
+      height: 7rem!important;
+    }
+
+  }
+}
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||End of tablet responsiveness||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
 //contd of styling: demography of students
 .actual-chart {
   border-radius: 50%;
