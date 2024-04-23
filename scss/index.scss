@@ -2,12 +2,12 @@
 // font family Lato
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Coiny&family=Kanit:ital,wght@0,400;1,200&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&family=Phudu:wght@800&family=Poppins&family=Roboto+Mono:ital,wght@0,200;1,500&family=Roboto:wght@100&family=Rubik+Iso&display=swap");
 
-* {
+*{
   @include font;
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-color: black;
+  text-decoration: none!important;
+
 }
+  
 
 // Empty classes for Javascript implementations
 .side-highlight {
@@ -294,7 +294,6 @@ nav {
   //Next Page section for mobile responsiveness
   .page-section {
     margin-top: 11rem;
-    
   }
 
   //Payments Page mobile responsiveness
@@ -329,15 +328,14 @@ nav {
     //background-color:yellow;
     position: relative;
     height: 20rem;
-    .col:nth-child(1)
-     {
+    .col:nth-child(1) {
       float: left;
       width: 15rem;
       margin-bottom: 20px;
       margin-right: 2rem;
     }
 
-    .col:nth-child(2){
+    .col:nth-child(2) {
       position: absolute;
       top: 0px;
       right: 0px;
@@ -348,9 +346,9 @@ nav {
     .col:nth-child(3) {
       //float: left;
       width: 15rem;
-     position: absolute;
-     bottom: 0px;
-     right: 9px;
+      position: absolute;
+      bottom: 0px;
+      right: 9px;
     }
 
     .col:nth-child(4) {
@@ -361,14 +359,13 @@ nav {
     }
   }
 
-  .piechart{
-    .actual-chart{
-      height:7rem ;
+  .piechart {
+    .actual-chart {
+      height: 7rem;
     }
-    .chart{
-      height: 7rem!important;
+    .chart {
+      height: 7rem !important;
     }
-
   }
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -462,12 +459,9 @@ nav {
 
 .list-of-graduants {
   width: 90%;
-  //background-color: $admin-dashboard-background;
-  //margin-top: 3rem;
   height: 4rem;
-  // display: grid;
-  // grid-template-columns: auto auto;
   font-size: 20px;
+  
   input {
     height: 2rem;
     font-size: 15px;
@@ -475,7 +469,7 @@ nav {
 
   .grad-div {
     width: 25rem;
-    //background-color: $admin-dashboard-background;
+    
     .grad-txt {
       @include search-bar;
       background-position: calc(13rem - 5px) 5px;
@@ -599,16 +593,14 @@ nav {
   .next-div {
     width: fit-content;
   }
-  .go-btn{
+  .go-btn {
     background-color: $filter-button-color;
     border-radius: 4px;
     border-style: none;
     padding: 5px 10px;
-  } 
-  .input-tag{
+  }
+  .input-tag {
     width: 2rem;
     border-radius: 3px;
   }
 }
-
-
